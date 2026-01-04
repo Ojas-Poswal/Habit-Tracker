@@ -99,7 +99,7 @@ if(isset($_POST['action'])) {
                     // --- Verify the password ---
                     if(password_verify($password, $fetched_password_hash)) {
                         // Password is correct! Start a new session.
-                        session_start();
+                        $user = mysqli_fetch_assoc($results);
                         
                         // Store data in session variables
                         $_SESSION["loggedin"] = true;
@@ -109,7 +109,7 @@ if(isset($_POST['action'])) {
                         // Redirect user to the main app page
                         header("location: dashboard.php");
                     } else {
-                        echo "Invalid username or password.";
+                       array_push($errors, "Wrong username/password combination");
                     }
                 }
             } else {
@@ -124,3 +124,4 @@ if(isset($_POST['action'])) {
 $conn->close();
 
 ?>
+
