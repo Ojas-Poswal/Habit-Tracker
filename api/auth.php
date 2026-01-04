@@ -99,7 +99,7 @@ if(isset($_POST['action'])) {
                     // --- Verify the password ---
                     if(password_verify($password, $fetched_password_hash)) {
                         // Password is correct! Start a new session.
-                        $user = mysqli_fetch_assoc($results);
+                       
                         
                         // Store data in session variables
                         $_SESSION["loggedin"] = true;
@@ -124,4 +124,5 @@ if(isset($_POST['action'])) {
 $conn->close();
 
 ?>
+
 
