@@ -51,8 +51,17 @@ if(isset($_POST['action'])) {
 
             // Execute the statement
             if($stmt_insert->execute()) {
-                echo "Registration successful! You can now log in.";
-                header("refresh:2;url=index.php"); 
+                // ... inside your registration success block ...
+
+// OLD BROKEN CODE (What you likely have):
+// echo "Registration successful! You can now log in.";
+// header("Location: ../login.php");
+
+// NEW FIXED CODE:
+// redirects immediately without printing text
+                  header("Location: ../login.php?registered=true");
+                  exit();
+              
             } else {
                 echo "Error: Something went wrong. Please try again later.";
             }
@@ -113,4 +122,5 @@ if(isset($_POST['action'])) {
 
 // Close database connection
 $conn->close();
+
 ?>
