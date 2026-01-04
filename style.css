@@ -1,0 +1,73 @@
+:root {
+    --primary: #6C63FF;
+    --secondary: #4CAF50;
+    --bg: #f4f7f6;
+    --card-bg: #ffffff;
+    --text: #333333;
+    --text-secondary: #7f8c8d;
+    --border: #e0e0e0;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* DARK MODE VARIABLES */
+body.dark-mode {
+    --primary: #8c85ff;
+    --secondary: #66bb6a;
+    --bg: #121212;
+    --card-bg: #1e1e1e;
+    --text: #e0e0e0;
+    --text-secondary: #b0b3b8;
+    --border: #333333;
+    --shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+    margin: 0;
+}
+
+/* THE LOGO */
+.app-logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 1.2rem;
+    transform: rotate(-10deg);
+}
+
+/* UTILITIES */
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+.btn-primary { background: var(--primary); color: white; }
+.card { background: var(--card-bg); border-radius: 16px; padding: 25px; box-shadow: var(--shadow); }
+input, select, textarea {
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
